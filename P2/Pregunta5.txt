@@ -1,0 +1,25 @@
+Es vol modificar calculator.c. En el cas de myprog_static:
+
+- myprog_static es l'script corresponent a la llibreria estàtica.
+Aquesta, es carregada en temps de compilació i per tant es copiada
+dins del executable. Si jo ara he fet una modificació a calculator.c, hauré
+de tornar a compilar la llibreria amb el modificat calculator.c, tornar a
+linkejar els arxius i finalment si exectuto myprog_static veuré la modificació
+
+En canvi, en el cas de myprog_dynamic:
+
+- myprog_dynamic és l'script corresponent a la llibraria dinàmica. 
+Aquesta, es carregada durant l'execució del progama, és a dir, no s'inclou
+dins de l'executable. Per tant, no farà falta cap modificació en l'executable
+"myprog_dynamic", ja que al ser executat ja agafarà les funcions del
+calculator.c modificat sense que hagi crear un nou executable.
+
+La solució més eficient si es vol fer canvis continuus en calculator.c es optar
+per la llibreria dinàmica, perquè no ens em de preocupar per tornar a compilar
+l'executable, sinó nomes en modificar l'arxiu que volem en la llibreria
+dinàmica
+
+Si volem fer servir la llibreria estàtica, les modificacions que haurem de fer
+seràn:
+- Tornar a compilar la llibreria amb els arxius modificats
+- Tornar a compilar l'executable amb la llibreria actualitzada

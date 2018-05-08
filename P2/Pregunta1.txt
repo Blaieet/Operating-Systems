@@ -1,0 +1,8 @@
+En primer lloc, jo he realitzat una compilació del codi de cada arxiu amb el seu codi font
+i mitjançant la instrucció "gcc -c arxiu.c -o arxiu.o", de manera que he creat 3 arxius "object" els quals contenen una versió binaria del codi. 
+
+De totes maneres, ara necesito enllaçar les diferents llibreries i funcions al codi font amb el 
+linker, de manera que si trec l'arxiu "calculator.o" el linker no podrà trobar les funcions 
+"countWords" ni "countOccurences" que es criden des del main. 
+
+Els include estan bé, el codi és completament correcte, però si el linker no troba la referencia d'una funció, no pot continuar l'execució i per tant salta l'error. Si eliminessim counter.o, pasaria exactament el mateix, però amb les funcions que hi ha a counter.c
